@@ -1,0 +1,14 @@
+Que necesitamos
+1. Cantidad de Alumnos
+2. Cantidad de Notas General
+3. Nombre de los alumnos
+4. Las notas
+
+Que procesos
+1. Pedir cantidad de alumnos
+2. Pedir la cantidad de notas con las que vamos a trabajar
+3. Pedir nombre y las notas de ese estudiante
+4. Promediar por estudiante
+
+Que le vamos a mostrar al profe:
+1. Mostrar nombres y calificación final
