@@ -1,0 +1,19 @@
+.contenedor{
+    height: 100vh;   
+}
+.cajones {
+    border: 1px solid black;
+    height: 100px;
+    font-size: 50px;
+}
+.columnas {
+    height: 85vh;
+}
+
+.piedepagina{
+    height: 10vh;
+}
+
+.rowsinmargen{
+    margin: 0;
+}
