@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cajero Automático</title>
+    <script src="js/index.js"></script>
+</head>
+<body>
+    <form action="">
+        <h1>Cajero Automático</h1>
+        <label for="">Usuario:</label>
+        <input type="text" name="usuario" id="user">
+        <label for="">Contraseña:</label>
+        <input type="password" name="contraseña" id="password">
+        <input type="button" value="Ingresar" onclick="login(this.form)">
+    </form>
+    <script>
+        function login(form){
+            if (form.usuario.value === "augusto") {
+                if (form.contraseña.value === "12345") {
+                    location="main.html"
+                } else {
+                    alert("Contraseña incorrecta")
+                }
+            } else {
+                alert("Usuario incorrecto")
+            }
+        }
+    </script>
+    
+</body>
+</html>

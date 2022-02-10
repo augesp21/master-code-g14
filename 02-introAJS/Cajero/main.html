@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Bienvenido Augusto</h1>
+    <form action="">Selecciona la operación que deseas realizar
+    <input type="button" value="Consultar saldo" onclick=saldo(this.form)>
+    <input type="button" value="Retirar efectivo" onclick=retiro(this.form)>
+    <br><br><br><br><br><br>
+    <input type="button" value="Cerrar sesión" onclick=cerrar(this.form)>
+    </form>
+    <script>
+        function saldo(form){
+            location="saldo.html"
+        }
+        function retiro(form){
+            location="retiro.html"
+        }
+        function cerrar(form){
+            location="index.html"
+        }
+    </script>
+</body>
+</html>
