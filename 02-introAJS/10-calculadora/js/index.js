@@ -7,53 +7,54 @@ function Calculo(data) {
   let operacion = '';
 
   for (i = 0; i < data.lenght; i++) {
-    if (data[i]==="+" || data[i]==="-" || data[i]==="x" || data[i]==="/") {
+    if (
+      data[i] === "+" ||
+      data[i] === "-" ||
+      data[i] === "x" ||
+      data[i] === "/"
+    ) {
       operacion = data[i];
-    } 
-    else {
-        if(operacion === ''){
-            resultado = Number(data[i]);
+    } else {
+      if (operacion === '') {
+        resultado = Number(data[i]);
+      } else {
+        if (operacion === "+") {
+          resultado = resultado + Number(data[i]);
         }
-        else{
-            if (operacion === '+'){
-                resultado = resultado + Number(data[i]);
-            }
-            if (operacion === '-'){
-                resultado = resultado - Number(data[i]);
-            }
-            if (operacion === 'x'){
-                resultado = resultado * Number(data[i]);
-            }
-            if (operacion === '/'){
-                resultado = resultado / Number(data[i]);
-            }
+        if (operacion === "-") {
+          resultado = resultado - Number(data[i]);
         }
-      
+        if (operacion === "x") {
+          resultado = resultado * Number(data[i]);
+        }
+        if (operacion === "/") {
+          resultado = resultado / Number(data[i]);
+        }
+      }
     }
   }
   return resultado;
 }
 
-function CapturarDatos(id){
+function CapturarDatos(id) {
   //variables locales
   let imprimirTotal = document.getElementById("total");
   let operaciones = document.getElementById("operaciones");
-  let historial = document.getElementById("historial")
+  let historial = document.getElementById("historial");
   let array = [];
   let total;
 
-  if (id === "+" || id === "-" || id === "x" || id === "/" || id ==="c") {
+  if (id==="+" || id==="-" || id==="x" || id==="/" || id==="c") {
     operaciones.innerText = imprimirTotal.innerText + " " + id;
     operador = 1;
-  } else if (id === "=") {
+  } else if (id==="=") {
     operaciones.innerText = operaciones.innerText + " " + imprimirTotal.innerText;
     array = operaciones.innerText.split(" ");
     total = Calculo(array);
 
     imprimirTotal.innerText = total;
 
-    historial.innerText = operaciones.innerText + ' ' + id + ' ' + total;
-
+    historial.innerText = operaciones.innerText + " " + id + " " + total;
   } else {
     numero = Number(id);
 

@@ -1,8 +1,10 @@
-/* let usuario = document.getElementById("user");
-let contraseña = document.getElementById("password");
+let usuario = document.getElementsByName("usuario");
+let contraseña = document.getElementById("pass");
+/* let usuario = prompt('Ingresa tu usuario')
+let contraseña = prompt('Ingresa tu contraseña'); */
 
 
-function login(form){
+function login(usuario, contraseña){
     if (usuario === "augusto") {
         if (contraseña === "12345") {
             location="main.html"
@@ -12,4 +14,4 @@ function login(form){
     } else {
         alert("Usuario incorrecto")
     }
-} */
+}
