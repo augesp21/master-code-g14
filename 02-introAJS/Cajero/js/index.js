@@ -1,22 +1,23 @@
 var cuentas = [
-  { nombre: "Mali", saldo: 200, password: "helloworld" },
-  { nombre: "Gera", saldo: 290, password: "l33t" },
-  { nombre: "Maui", saldo: 67, password: "123" },
+  { nombre: "Mauricio", saldo: 390, password: "12345" },
+  { nombre: "Jesus", saldo: 350, password: "123" },
+  { nombre: "Augusto", saldo: 80, password: "contraseña" },
 ];
 
-document.getElementById('saldoEnCuenta').innerHTML = localStorage.getItem('saldoUsuario');
+document.getElementById("saldoEnCuenta").innerHTML =
+  localStorage.getItem("saldoUsuario");
 
 function login() {
   let aux = 0;
   let usuario = document.getElementById("floatingInput").value;
   let contraseña = document.getElementById("floatingPassword").value;
-  
+
   for (let i = 0; i < cuentas.length; i++) {
     if (usuario === cuentas[i].nombre) {
       if (contraseña === cuentas[i].password) {
         location = "main.html";
         aux = 1;
-        localStorage.setItem('saldoUsuario',cuentas[i].saldo)
+        localStorage.setItem("saldoUsuario", cuentas[i].saldo);
       }
     }
   }
@@ -25,6 +26,29 @@ function login() {
     alert("Usuario o Contraseña incorrectos");
   }
 }
+
+var saldoInicial = localStorage.getItem("saldoUsuario");
+var montoARetirar = document.getElementById("montoParaRetirar").value;
+
+function retirarDinero() {
+  let saldoFinal = Number(saldoInicial - montoARetirar);
+
+  for (let i = 0; i < cuentas.length; i++) {
+    if (saldoInicial == cuentas[i].saldo) {
+      saldoFinal -= Number(cantidad);
+      alert(saldoFinal);
+    }
+  }
+}
+
+/* function logicaDeRetiro(cantidad) {
+  for (let i = 0; i < cuentas.length; i++) {
+    if (saldoInicial == cuentas[i].saldo) {
+      saldoInicial -= Number(cantidad);
+      alert(saldoInicial);
+    }
+  }
+} */
 
 function saldo(form) {
   location = "saldo.html";
@@ -38,65 +62,9 @@ function ingreso(form) {
 function cerrar(form) {
   location = "index.html";
 }
-function regresar(form){
-  location="main.html"
+function regresar(form) {
+  location = "main.html";
 }
-
-/* function login() {
-  let aux = 0;
-  let usuario = document.getElementById("floatingInput").value;
-  let contraseña = document.getElementById("floatingPassword").value;
-
-  for (let i = 0; i < cuentas.length; i++) {
-    if (usuario === cuentas[i].nombre) {
-      aux = 1;
-      if (contraseña === cuentas[i].password) {
-        location = "main.html";
-        aux = 2;
-      }
-    }
-  }
-  if (aux == 1 && contraseña === "") {
-    alert("Ingrese contraseña");
-  } else aux == 1 && contraseña != cuentas[i].password;
-  {
-    alert("Contraseña incorrecta");
-  }
-  if (aux == 0 && usuario === "") {
-    alert("Ingrese Usuario");
-  } else aux == 0 && usuario != cuentas[i].nombre;
-  alert("Usuario invalido");
-}
-if (aux == 2) {
-} */
-
-/* function login() {
-  let aux = 0;
-  let usuario = document.getElementById("floatingInput").value;
-  let contraseña = document.getElementById("floatingPassword").value;
-
-  for (let i = 0; i < cuentas.length; i++) {
-    if (usuario === cuentas[i].nombre) {
-      aux = 1;
-      if ((aux = 1 && contraseña === cuentas[i].password)) {
-        location = "main.html";
-        aux = 2;
-      }
-    }
-  }
-  if (aux=2){
-  }
-  else if (aux=1 && contraseña === "") {
-    alert("Ingrese contraseña");
-  } else(aux = 1 && contraseña != cuentas[i].password){
-    alert("Contraseña incorrecta");
-  }
-  if(aux=0 && usuario === "") {
-    alert("Ingrese Usuario");
-  } else (aux=0 && usuario != cuentas[i].nombre){
-    alert("Usuario invalido");
-  }
-} */
 
 /* function login() {
   let usuario = document.getElementById("floatingInput").value;
