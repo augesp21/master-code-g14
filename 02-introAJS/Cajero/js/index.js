@@ -15,7 +15,7 @@ function login() {
   for (let i = 0; i < cuentas.length; i++) {
     if (usuario === cuentas[i].nombre) {
       if (contraseña === cuentas[i].password) {
-        location = "main.html";
+        location = "/Cajero/htmls/main.html";
         aux = 1;
 
         localStorage.setItem("saldoUsuario", cuentas[i].saldo);
@@ -52,19 +52,19 @@ function retirarDinero() {
 } */
 
 function saldo(form) {
-  location = "saldo.html";
+  location = "/Cajero/htmls/saldo.html";
 }
 function retiro(form) {
-  location = "retiro.html";
+  location = "/Cajero/htmls/retiro.html";
 }
-function ingreso(form) {
-  location = "ingreso.html";
+function deposito(form) {
+  location = "/Cajero/htmls/ingreso.html";
 }
 function cerrar(form) {
-  location = "index.html";
+  location = "/Cajero/index.html";
 }
 function regresar(form) {
-  location = "main.html";
+  location = "/Cajero/htmls/main.html";
 }
 
 function Calculo(data) {
@@ -73,14 +73,11 @@ function Calculo(data) {
 
   for (i = 0; i < data.length; i++) {
     if (data[i] === "confirmar") {
-      operacion = data[i];
+      operacion = Number(saldoInicial) - data[i] ;
     } else {
       if (operacion === "") {
         resultado = Number(data[i]);
       } else {
-        if (operacion === "confirmar") {
-          resultado = resultado - Number(data[i]);
-        }
       }
     }
   }
@@ -96,10 +93,10 @@ function CapturarDatos(id) {
   let array = [];
   let total;
 
-  if (id === "+" || id === "-" || id === "x" || id === "c" || id === "/") {
+  if (id === "C") {
     operaciones.innerText = imprimirTotal.innerText + " " + id;
     operador = 1;
-  } else if (id === "=") {
+  } else if (id === "confirmar") {
     operaciones.innerText =
       operaciones.innerText + " " + imprimirTotal.innerText;
     array = operaciones.innerText.split(" ");
