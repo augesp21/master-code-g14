@@ -4,6 +4,8 @@ var cuentas = [
   { nombre: "Maui", saldo: 67, password: "123" },
 ];
 
+document.getElementById('saldoEnCuenta').innerHTML = localStorage.getItem('saldoUsuario');
+
 function login() {
   let aux = 0;
   let usuario = document.getElementById("floatingInput").value;
@@ -24,13 +26,6 @@ function login() {
   }
 }
 
-let saldoUsuario = localStorage.getItem('saldoUsuario');
-console.log(saldoUsuario);
-
-
-let mensajeSaldo = document.getElementById('saldoEnCuenta');
-mensajeSaldo.innerHTML = 'El saldo de tu cuenta es ${saldoUsuario}';
-
 function saldo(form) {
   location = "saldo.html";
 }
@@ -42,6 +37,9 @@ function ingreso(form) {
 }
 function cerrar(form) {
   location = "index.html";
+}
+function regresar(form){
+  location="main.html"
 }
 
 /* function login() {
