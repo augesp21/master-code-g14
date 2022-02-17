@@ -1,6 +1,6 @@
 var cuentas = [
-  { nombre: "Mauricio", saldo: 390, password: "12345" },
-  { nombre: "Jesus", saldo: 350, password: "123" },
+  { nombre: "Mauricio", saldo: 580, password: "12345" },
+  { nombre: "Jesus", saldo: 450, password: "123" },
   { nombre: "Augusto", saldo: 80, password: "contraseña" },
 ];
 
@@ -17,6 +17,7 @@ function login() {
       if (contraseña === cuentas[i].password) {
         location = "main.html";
         aux = 1;
+
         localStorage.setItem("saldoUsuario", cuentas[i].saldo);
       }
     }
@@ -64,6 +65,59 @@ function cerrar(form) {
 }
 function regresar(form) {
   location = "main.html";
+}
+
+function Calculo(data) {
+  let resultado = 0;
+  let operacion = "";
+
+  for (i = 0; i < data.length; i++) {
+    if (data[i] === "confirmar") {
+      operacion = data[i];
+    } else {
+      if (operacion === "") {
+        resultado = Number(data[i]);
+      } else {
+        if (operacion === "confirmar") {
+          resultado = resultado - Number(data[i]);
+        }
+      }
+    }
+  }
+
+  return resultado;
+}
+
+function CapturarDatos(id) {
+  //variables locales
+  let imprimirTotal = document.getElementById("total");
+  let operaciones = document.getElementById("operacionRetiro");
+  let historial = document.getElementById("historial");
+  let array = [];
+  let total;
+
+  if (id === "+" || id === "-" || id === "x" || id === "c" || id === "/") {
+    operaciones.innerText = imprimirTotal.innerText + " " + id;
+    operador = 1;
+  } else if (id === "=") {
+    operaciones.innerText =
+      operaciones.innerText + " " + imprimirTotal.innerText;
+    array = operaciones.innerText.split(" ");
+    total = Calculo(array);
+
+    imprimirTotal.innerText = total;
+
+    historial.innerText = operaciones.innerText + " " + id + " " + total;
+  } else {
+    numero = Number(id);
+
+    if (imprimirTotal.innerText === "0" || operador === 1) {
+      imprimirTotal.innerText = numero;
+      operador = 0;
+    } else {
+      imprimirTotal.innerText = imprimirTotal.innerText + numero;
+    }
+  }
 }
 
 /* function login() {
