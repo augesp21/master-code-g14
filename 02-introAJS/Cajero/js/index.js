@@ -4,8 +4,8 @@ var cuentas = [
   { nombre: "Augusto", saldo: 80, password: "contraseña" },
 ];
 
-document.getElementById("saldoEnCuenta").innerHTML =
-  localStorage.getItem("saldoUsuario");
+document.getElementById("saldoEnCuenta").innerHTML = `Tu saldo en cuenta es: $ ${
+  localStorage.getItem("saldoUsuario")}`;
 
 function login() {
   let aux = 0;
@@ -72,8 +72,8 @@ function Calculo(data) {
   let operacion = "";
 
   for (i = 0; i < data.length; i++) {
-    if (data[i] === "confirmar") {
-      operacion = Number(saldoInicial) - data[i] ;
+    if (data[i] === "c") {
+      operacion = saldoInicial - data[i] ;
     } else {
       if (operacion === "") {
         resultado = Number(data[i]);
@@ -93,10 +93,7 @@ function CapturarDatos(id) {
   let array = [];
   let total;
 
-  if (id === "C") {
-    operaciones.innerText = imprimirTotal.innerText + " " + id;
-    operador = 1;
-  } else if (id === "confirmar") {
+  if (id === "confirmar") {
     operaciones.innerText =
       operaciones.innerText + " " + imprimirTotal.innerText;
     array = operaciones.innerText.split(" ");
@@ -104,7 +101,7 @@ function CapturarDatos(id) {
 
     imprimirTotal.innerText = total;
 
-    historial.innerText = operaciones.innerText + " " + id + " " + total;
+    /* historial.innerText = operaciones.innerText + " " + id + " " + total; */
   } else {
     numero = Number(id);
 
