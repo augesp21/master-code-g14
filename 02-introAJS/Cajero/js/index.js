@@ -15,7 +15,7 @@ function login() {
   for (let i = 0; i < cuentas.length; i++) {
     if (usuario === cuentas[i].nombre) {
       if (contraseña === cuentas[i].password) {
-        location = "/Cajero/htmls/main.html";
+        location = "main.html";
         aux = 1;
 
         localStorage.setItem("saldoUsuario", cuentas[i].saldo);
@@ -52,19 +52,19 @@ function retirarDinero() {
 } */
 
 function saldo(form) {
-  location = "/Cajero/htmls/saldo.html";
+  location = "saldo.html";
 }
 function retiro(form) {
-  location = "/Cajero/htmls/retiro.html";
+  location = "retiro.html";
 }
 function deposito(form) {
-  location = "/Cajero/htmls/ingreso.html";
+  location = "ingreso.html";
 }
 function cerrar(form) {
-  location = "/Cajero/index.html";
+  location = "index.html";
 }
 function regresar(form) {
-  location = "/Cajero/htmls/main.html";
+  location = "main.html";
 }
 
 function Calculo(data) {
