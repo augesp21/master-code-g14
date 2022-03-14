@@ -42,15 +42,6 @@ function retirarDinero() {
   }
 }
 
-/* function logicaDeRetiro(cantidad) {
-  for (let i = 0; i < cuentas.length; i++) {
-    if (saldoInicial == cuentas[i].saldo) {
-      saldoInicial -= Number(cantidad);
-      alert(saldoInicial);
-    }
-  }
-} */
-
 function saldo(form) {
   location = "saldo.html";
 }
