@@ -59,10 +59,7 @@ console.log(arregloBasico.sort((a,b) => {
     return a - b;
 })); */
 
-const arregloBasico = [
-    1,5,2,4,3,3,5
-];
-
+const arregloBasico = [1, 5, 2, 4, 3, 3, 5];
 
 /* const filtrado = arregloBasico.filter(function(arreglo){
     if (arreglo === 5) {
@@ -78,8 +75,8 @@ console.log(encontrar);
 
 const mapear = arregloBasico.map(arreglo => arreglo); */
 
-const arreglo = [1,2,3,4,5];
-const arreglo1 = arreglo.map(arreglo => arreglo);
+const arreglo = [1, 2, 3, 4, 5];
+const arreglo1 = arreglo.map((arreglo) => arreglo);
 
 arreglo[0] = 6;
 arreglo1[1] = 7;
@@ -89,12 +86,27 @@ console.log(arreglo1);
 
 //--------------------------------------------------------
 
-const arregloa = [{dato: 1}, {dato: 2}, {dato: 3}];
-const arreglob = arregloa.map(arr => ({...arr}));
+const arregloa = [
+  {
+    dato: 1,
+    info: {
+      nombre: 'Daniel',
+      ciudades: []
+    }
+  },
+  {
+    dato: 2,
+  },
+  {
+    dato: 3,
+  },
+];
+
+const arreglob = arregloa.map((arr) => ({ ...arr }));
 
 arregloa[0].dato = 6;
 arreglob[1].dato = 7;
+arregloa[0].info.nombre = 'Karla';
 
 console.log(arregloa);
 console.log(arreglob);
-
