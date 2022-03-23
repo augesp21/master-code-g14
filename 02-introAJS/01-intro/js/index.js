@@ -2,7 +2,7 @@
 //Muestra la salida en Consola
 console.log('Hola Mundo, desde un archivo externo')
 console.log(5 + 10)
-console.log(4 === 10)
+console.log('3' == 3)
 
 //Muestra la salida en la pantalla
 document.write('Hola Mundo, desde un archivo externo')
